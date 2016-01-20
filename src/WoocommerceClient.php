@@ -13,7 +13,6 @@ class WoocommerceClient
     protected $client;
 
     /**
-     * @param array $config
      */
     public function __construct(Client $client)
     {
