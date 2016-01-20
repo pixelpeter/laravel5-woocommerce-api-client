@@ -25,7 +25,7 @@ before_script:
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
 
 script:
-  - phpunit --coverage-text --coverage-clover=coverage.clover
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 branches:
   only:
