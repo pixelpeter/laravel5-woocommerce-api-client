@@ -42,16 +42,16 @@ class WoocommerceServiceProvider extends ServiceProvider
         $config = $app['config']->get('woocommerce');
 
         $app['woocommerce.client'] = $app->share(function() use ($config) {
-           return new Client(
-               $config['store_url'],
-               $config['consumer_key'],
-               $config['consumer_secret'],
-               [
-                   'version' => $config['api_version']
-               ]);
+            return new Client(
+                $config['store_url'],
+                $config['consumer_key'],
+                $config['consumer_secret'],
+                [
+                    'version' => $config['api_version']
+                ]);
         });
 
-        $app->singleton('Pixelpeter\Woocommerce\WoocommerceClient', function ($app) {
+        $app->singleton('Pixelpeter\Woocommerce\WoocommerceClient', function($app) {
             return new WoocommerceClient($app['woocommerce.client']);
         });
 
