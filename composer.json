@@ -1,0 +1,39 @@
+{
+  "name": "pixelpeter/laravel5-woocommerce-api-client",
+  "description": "Laravel 5 wrapper for the Woocommerce REST API",
+  "keywords": [
+    "laravel",
+    "wordpress",
+    "woocommerce",
+    "rest",
+    "api"
+  ],
+  "homepage": "https://github.com/pixelpeter/laravel5-woocommerce-api-client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Peter Haak",
+      "email": "info@pixelpeter.de",
+      "homepage": "https://pixelpeter.de/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "automattic/woocommerce": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pixelpeter\\Woocommerce\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pixelpeter\\Woocommerce\\Test\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.1",
+    "mockery/mockery": "^0.9.4"
+  }
+}
