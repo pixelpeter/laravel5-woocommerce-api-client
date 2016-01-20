@@ -25,9 +25,14 @@ before_script:
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
 
 script:
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  - mkdir -p build/logs
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 branches:
   only:
     - master
     - stable
+
+after_success:
+  - travis_retry php vendor/bin/coveralls -v
+  
