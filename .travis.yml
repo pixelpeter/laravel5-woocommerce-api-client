@@ -7,10 +7,22 @@ php:
 matrix:
   allow_failures:
     - php: 7.0
+  include:
+    - php: 5.6
+      env: dependencies=lowest
+    - php: 7
+      env: dependencies=lowest
+    - php: 5.6
+      env: dependencies=highest
+    - php: 7
+      env: dependencies=highest
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install
+  - composer self-update -q
+  - if [ -n "$GITHUB_TOKEN" ]; then composer config github-oauth.github.com ${$GITHUB_TOKEN}; fi;
+  - if [ -z "$dependencies" ]; then composer install; fi;
+  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
+  - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
 
 script:
   - phpunit --coverage-text --coverage-clover=coverage.clover
