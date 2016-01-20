@@ -17,6 +17,10 @@
     <filter>
         <whitelist>
             <directory suffix=".php">src/</directory>
+            <exclude>
+                <file>./src/WoocommerceServiceProvider.php</file>
+                <file>./src/Facades/Woocommerce.php</file>
+            </exclude>
         </whitelist>
     </filter>
 </phpunit>
