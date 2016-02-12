@@ -52,14 +52,14 @@ WOOCOMMERCE_VERSION=v3
 ```php
 use Woocommerce;
 
-return Woocommerceapi::get('');
+return Woocommerce::get('');
 ```
 
 ### View all orders
 ```php
 use Woocommerce;
 
-return Woocommerceapi::get('orders');
+return Woocommerce::get('orders');
 ```
 
 ### View all completed orders created after a specific date
@@ -73,7 +73,7 @@ $data = [
     ]
 ];
 
-$result = Woocommerceapi::get('orders', $data);
+$result = Woocommerce::get('orders', $data);
 
 foreach($result['orders'] as $order)
 {
@@ -81,7 +81,7 @@ foreach($result['orders'] as $order)
 }
 
 // you can also use array access
-$orders = Woocommerceapi::get('orders', $data)['orders'];
+$orders = Woocommerce::get('orders', $data)['orders'];
 
 foreach($orders as $order)
 {
@@ -100,7 +100,7 @@ $data = [
     ]
 ];
 
-return Woocommerceapi::put('products/1', $data);
+return Woocommerce::put('products/1', $data);
 ```
 
 ### More Examples
