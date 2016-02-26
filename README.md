@@ -43,6 +43,7 @@ You can directly edit the configuration in `config/woocommerce.php` or copy thes
 WOOCOMMERCE_STORE_URL=http://example.org
 WOOCOMMERCE_CONSUMER_KEY=ck_your-consumer-key
 WOOCOMMERCE_CONSUMER_SECRET=cs_your-consumer-secret
+WOOCOMMERCE_VERIFY_SSL=false
 WOOCOMMERCE_VERSION=v3
 ```
 
