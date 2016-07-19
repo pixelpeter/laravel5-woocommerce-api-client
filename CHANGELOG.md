@@ -2,6 +2,9 @@
 
 All Notable changes for the Laravel 5 WooCommerce REST API Client  will be documented in this file
 
+## 2.0.0
+- Add support for Woocommerce 2.6+ (Thanks to leeroyrose)
+
 ## 1.0.1
 - Small fixes in documentation
 - Added support for "verify_ssl" config option

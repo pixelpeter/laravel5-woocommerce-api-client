@@ -15,8 +15,15 @@ A simple Laravel 5 wrapper for the [official WooCommerce REST API PHP Library](h
 ## Installation
 
 ### Step 1: Install Through Composer
+
+For WooCommerce (WC) 2.6+ use the v2.x branch
 ``` bash
-composer require pixelpeter/laravel5-woocommerce-api-client
+composer require pixelpeter/laravel5-woocommerce-api-client ^2.0
+```
+
+For older versions of Woocommerce starting from 2.1+ use the v1.x branch
+``` bash
+composer require pixelpeter/laravel5-woocommerce-api-client ^1.0
 ```
 
 ### Step 2: Add the Service Provider
