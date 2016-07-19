@@ -47,8 +47,9 @@ class WoocommerceServiceProvider extends ServiceProvider
                 $config['consumer_key'],
                 $config['consumer_secret'],
                 [
-                    'version' => $config['api_version'],
-			        'verify_ssl' => $config['verify_ssl'],
+                    'version' => 'wc/'.$config['api_version'],
+			              'verify_ssl' => $config['verify_ssl'],
+                    'wp_api' => $config['wp_api'],
                 ]);
         });
 
