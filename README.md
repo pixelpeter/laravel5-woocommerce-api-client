@@ -46,14 +46,22 @@ Add the alias in `app/config/app.php`
 ];
 ```
 
-### Step 4: Customize configuration
+### Step 4: Publish configuration
+``` bash
+php artisan vendor:publish --provider="Pixelpeter\Woocommerce\WoocommerceServiceProvider"
+```
+
+### Step 5: Customize configuration
 You can directly edit the configuration in `config/woocommerce.php` or copy these values to your `.env` file.
 ```php
 WOOCOMMERCE_STORE_URL=http://example.org
 WOOCOMMERCE_CONSUMER_KEY=ck_your-consumer-key
 WOOCOMMERCE_CONSUMER_SECRET=cs_your-consumer-secret
 WOOCOMMERCE_VERIFY_SSL=false
-WOOCOMMERCE_VERSION=v3
+WOOCOMMERCE_VERSION=v1
+WOOCOMMERCE_WP_API=true
+WOOCOMMERCE_WP_QUERY_STRING_AUTH=false
+WOOCOMMERCE_WP_TIMEOUT=15
 ```
 
 ## Examples
@@ -114,7 +122,7 @@ return Woocommerce::put('products/1', $data);
 ```
 
 ### More Examples
-Refer to [WooCommerce REST API Documentation](woothemes.github.io/woocommerce-rest-api-docs/) for more examples and documention.
+Refer to [WooCommerce REST API Documentation](https://woocommerce.github.io/woocommerce-rest-api-docs) for more examples and documention.
 
 ## Testing
 Run the tests with:
