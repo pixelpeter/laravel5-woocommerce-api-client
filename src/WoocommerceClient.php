@@ -8,7 +8,7 @@ use Automattic\WooCommerce\Client;
 class WoocommerceClient
 {
     /**
-     * @var Automattic\WooCommerce\Client
+     * @var \Automattic\WooCommerce\Client
      */
     protected $client;
 
