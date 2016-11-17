@@ -50,6 +50,8 @@ class WoocommerceServiceProvider extends ServiceProvider
                     'version' => 'wc/'.$config['api_version'],
                     'verify_ssl' => $config['verify_ssl'],
                     'wp_api' => $config['wp_api'],
+                    'query_string_auth' => $config['query_string_auth'],
+                    'timeout' => $config['timeout'],
                 ]);
         });
 
