@@ -41,7 +41,7 @@ class WoocommerceServiceProvider extends ServiceProvider
 
         $config = $app['config']->get('woocommerce');
 
-        $app['woocommerce.client'] = $app->share(function() use ($config) {
+        $app->singleton('woocommerce.client', function() use ($config) {
             return new Client(
                 $config['store_url'],
                 $config['consumer_key'],
