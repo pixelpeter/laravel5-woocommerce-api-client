@@ -2,6 +2,9 @@
 
 All Notable changes for the Laravel 5 WooCommerce REST API Client  will be documented in this file
 
+## 2.2.0
+- Laravel 5.4 compatibility
+
 ## 2.1.0
 - Add additional configuration vallues (Thanks to ebisbe)
 - Update README.md
