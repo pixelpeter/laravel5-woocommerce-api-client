@@ -81,6 +81,9 @@ return Woocommerce::get('orders');
 ```
 
 ### View all completed orders created after a specific date
+#### For legacy API versions 
+(WC 2.4.x or later, WP 4.1 or later) use this syntax
+
 ```php
 use Woocommerce;
 
@@ -105,7 +108,35 @@ foreach($orders as $order)
 {
     // do something with $order
 }
+```
 
+#### For current API versions 
+(WC 2.6.x or later, WP 4.4 or later) use this syntax.
+`after` needs to be a ISO-8601 compliant date!≠
+
+```php
+use Woocommerce;
+
+$data = [
+    'status' => 'completed',
+    'after' => '2016-01-14T00:00:00'
+    ]
+];
+
+$result = Woocommerce::get('orders', $data);
+
+foreach($result['orders'] as $order)
+{
+    // do something with $order
+}
+
+// you can also use array access
+$orders = Woocommerce::get('orders', $data)['orders'];
+
+foreach($orders as $order)
+{
+    // do something with $order
+}
 ```
 
 ### Update a product
