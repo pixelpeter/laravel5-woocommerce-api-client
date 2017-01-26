@@ -70,4 +70,24 @@ class WoocommerceClient
     {
         return $this->client->delete($endpoint, $parameters);
     }
+
+    /**
+     * Get the http request header from the last request
+     *
+     * @return \Automattic\WooCommerce\HttpClient\Request
+     */
+    public function getRequest()
+    {
+        return $this->client->http->getRequest();
+    }
+
+    /**
+     * Get the http response headers from the last request
+     *
+     * @return \Automattic\WooCommerce\HttpClient\Response
+     */
+    public function getResponse()
+    {
+        return $this->client->http->getResponse();
+    }
 }
