@@ -167,6 +167,22 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function pagination_total_results_returns_valid_number()
+    {
+        $this->httpClient
+            ->shouldReceive('getResponse->getHeaders')
+            ->once()
+            ->andReturn([
+                'X-WP-Total' => 1234
+            ]);
+        $this->client->http = $this->httpClient;
+
+        $this->assertEquals($this->woocommerce->totalResults(), 1234);
+    }
+
+    /**
+     * @test
+     */
     public function pagination_total_pages_returns_valid_page_number()
     {
         $this->httpClient

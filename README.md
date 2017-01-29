@@ -152,6 +152,54 @@ $data = [
 return Woocommerce::put('products/1', $data);
 ```
 
+### Pagination
+So you don't have to mess around with the request and response header and the calculations this wrapper will do all the heavy lifting for you.
+(WC 2.6.x or later, WP 4.4 or later) 
+
+```php
+use Woocommerce;
+
+// assuming we have 474 orders in pur result
+// we will request page 5 with 25 results per page
+$params = [
+    'per_page' => 25,
+    'page' => 5
+];
+
+Woocommerce::get('orders', $params);
+
+Woocommerce::totalResults(); // 474
+Woocommerce::firstPage(); // 1
+Woocommerce::lastPage(); // 19
+Woocommerce::currentPage(); // 5 
+Woocommerce::totalPages(); // 19
+Woocommerce::previousPage(); // 4
+Woocommerce::nextPage(); // 6
+Woocommerce::hasPreviousPage(); // true 
+Woocommerce::hasNextPage(); // true
+Woocommerce::hasNotPreviousPage(); // false 
+Woocommerce::hasNotNextPage(); // false
+```
+
+### HTTP Request & Response (Headers)
+
+```php
+use Woocommerce;
+
+// first send a request
+Woocommerce::get('orders');
+
+// get the request
+Woocommerce::getRequest();
+
+// get the response headers
+Woocommerce::getResponse();
+
+// get the total number of results
+Woocommerce::getResponse()->getHeaders()['X-WP-Total']
+```
+
+
 ### More Examples
 Refer to [WooCommerce REST API Documentation](https://woocommerce.github.io/woocommerce-rest-api-docs) for more examples and documention.
 

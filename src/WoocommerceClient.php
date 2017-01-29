@@ -122,6 +122,16 @@ class WoocommerceClient
     }
 
     /**
+     * Return the total number of results
+     *
+     * @return int
+     */
+    public function totalResults()
+    {
+        return (int)$this->getResponse()->getHeaders()['X-WP-Total'];
+    }
+
+    /**
      * Return the total number of pages for this result
      *
      * @return mixed
