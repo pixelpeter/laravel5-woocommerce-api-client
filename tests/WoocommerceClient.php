@@ -22,11 +22,6 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
         $this->woocommerce = new WoocommerceClient($this->client);
     }
 
-    public function testSomethingIsTrue()
-    {
-        $this->assertTrue(true);
-    }
-
     /**
      * @test
      */
@@ -38,7 +33,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->with('someurl',['bar' => 'baz'])
             ->andReturn('foo');
 
-        $this->assertEquals($this->woocommerce->post('someurl', ['bar' => 'baz']), 'foo');
+        $this->assertEquals('foo', $this->woocommerce->post('someurl', ['bar' => 'baz']));
     }
 
     /**
@@ -52,7 +47,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->with('someurl',['bar' => 'baz'])
             ->andReturn('foo');
 
-        $this->assertEquals($this->woocommerce->put('someurl', ['bar' => 'baz']), 'foo');
+        $this->assertEquals('foo', $this->woocommerce->put('someurl', ['bar' => 'baz']));
     }
 
     /**
@@ -66,7 +61,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->with('someurl',[])
             ->andReturn('foo');
 
-        $this->assertEquals($this->woocommerce->get('someurl'), 'foo');
+        $this->assertEquals('foo', $this->woocommerce->get('someurl'));
     }
 
     /**
@@ -80,7 +75,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->with('someurl',[])
             ->andReturn('foo');
 
-        $this->assertEquals($this->woocommerce->delete('someurl'), 'foo');
+        $this->assertEquals('foo', $this->woocommerce->delete('someurl'));
     }
 
     /**
@@ -94,7 +89,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->andReturn('foo');
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->getRequest(), 'foo');
+        $this->assertEquals('foo', $this->woocommerce->getRequest());
     }
 
     /**
@@ -108,7 +103,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->andReturn('foo');
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->getResponse(), 'foo');
+        $this->assertEquals('foo', $this->woocommerce->getResponse());
     }
 
     /**
@@ -116,7 +111,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
      */
     public function pagination_first_page_returns_valid_page_number()
     {
-        $this->assertEquals($this->woocommerce->firstPage(), 1);
+        $this->assertEquals(1, $this->woocommerce->firstPage());
     }
 
     /**
@@ -132,7 +127,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->lastPage(), 12);
+        $this->assertEquals(12, $this->woocommerce->lastPage());
     }
 
     /**
@@ -146,7 +141,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ->andReturn([]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->currentPage(), 1);
+        $this->assertEquals(1, $this->woocommerce->currentPage());
     }
 
     /**
@@ -161,7 +156,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->currentPage(), 6);
+        $this->assertEquals(6, $this->woocommerce->currentPage());
     }
 
     /**
@@ -177,7 +172,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->totalResults(), 1234);
+        $this->assertEquals(1234, $this->woocommerce->totalResults());
     }
 
     /**
@@ -193,7 +188,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->lastPage(), 13);
+        $this->assertEquals(13, $this->woocommerce->lastPage());
     }
 
     /**
@@ -225,7 +220,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->previousPage(), 4);
+        $this->assertEquals(4, $this->woocommerce->previousPage());
         $this->assertTrue($this->woocommerce->hasPreviousPage());
         $this->assertFalse($this->woocommerce->hasNotPreviousPage());
     }
@@ -269,7 +264,7 @@ class WoocommerceClientTest extends PHPUnit_Framework_TestCase
             ]);
         $this->client->http = $this->httpClient;
 
-        $this->assertEquals($this->woocommerce->nextPage(), 6);
+        $this->assertEquals(6, $this->woocommerce->nextPage());
         $this->assertTrue($this->woocommerce->hasNextPage());
         $this->assertFalse($this->woocommerce->hasNotNextPage());
     }
