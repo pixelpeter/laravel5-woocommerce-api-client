@@ -16,7 +16,12 @@ A simple Laravel 5 wrapper for the [official WooCommerce REST API PHP Library](h
 
 ### Step 1: Install Through Composer
 
-For WooCommerce (WC) 2.6+ use the v2.x branch
+For API Version v2, WooCommerce 3.0+, Wordpress 4.4+, php 7.0+, Laravel 5.5+ use the v3.x branch
+``` bash
+composer require pixelpeter/laravel5-woocommerce-api-client ^3.0
+```
+
+For API Version v1, WooCommerce 2.6+, Wordpress 4.4+, Laravel 5.4+ use the v2.x branch
 ``` bash
 composer require pixelpeter/laravel5-woocommerce-api-client ^2.0
 ```
@@ -26,7 +31,7 @@ For older versions of Woocommerce starting from 2.1+ use the v1.x branch
 composer require pixelpeter/laravel5-woocommerce-api-client ^1.0
 ```
 
-### Step 2: Add the Service Provider
+### Step 2: Add the Service Provider (not needed with v3.x)
 Add the service provider in `app/config/app.php`
 ```php
 'provider' => [
@@ -36,7 +41,7 @@ Add the service provider in `app/config/app.php`
 ];
 ```
 
-### Step 3: Add the Facade
+### Step 3: Add the Facade (not needed with v3.x)
 Add the alias in `app/config/app.php`
 ```php
 'aliases' => [

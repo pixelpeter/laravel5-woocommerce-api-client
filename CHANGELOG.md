@@ -1,6 +1,14 @@
 # Changelog
 
-All Notable changes for the Laravel 5 WooCommerce REST API Client  will be documented in this file
+All Notable changes for the Laravel 5 WooCommerce REST API Client will be documented in this file
+
+## 3.0.0
+- Add support for Auto-Discovery (Thanks to palpalani)
+- Require php 7.0+
+- Upgrade to phpunit 6.2.x
+- Remove composer.lock
+- Narrow version for automattic/woocommerce to stick to 1.3.x
+- Set default API Version to v2 in config/woocommerce.php
 
 ## 2.3.0
 - Add pagination functionality.

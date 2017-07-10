@@ -8,7 +8,7 @@ use Pixelpeter\Woocommerce\WoocommerceClient;
 /**
  * @property Mockery\MockInterface client
  */
-class WoocommerceClientTest extends PHPUnit_Framework_TestCase
+class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * set up
