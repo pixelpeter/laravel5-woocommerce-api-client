@@ -2,6 +2,10 @@
 
 All Notable changes for the Laravel 5 WooCommerce REST API Client will be documented in this file
 
+## 3.0.1
+- Update outdated composer dependencies (phpunit, mockery)
+- Add php 7.2 to travis-ci 
+
 ## 3.0.0
 - Add support for Auto-Discovery (Thanks to palpalani)
 - Require php 7.0+
