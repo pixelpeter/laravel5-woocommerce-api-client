@@ -24,7 +24,7 @@
   ],
   "require": {
     "php" : "^7.0",
-    "automattic/woocommerce": "1.3.*"
+    "automattic/woocommerce": "3.0.*"
   },
   "autoload": {
     "psr-4": {
