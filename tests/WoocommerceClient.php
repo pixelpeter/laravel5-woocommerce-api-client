@@ -275,6 +275,22 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @test
+     */
+    public function headers_are_converted_to_lower_case_when_requested()
+    {
+        $header = "X-Test-Header";
+
+        $this->woocommerce->useCaseSensitiveHeaders();
+
+        $this->assertEquals($header, $this->woocommerce->getHeaderWithCase($header));
+
+        $this->woocommerce->useLowerCaseHeaders();
+
+        $this->assertEquals(strtolower($header), $this->woocommerce->getHeaderWithCase($header));
+    }
+
+    /**
      * tear down
      */
     public function tearDown()
