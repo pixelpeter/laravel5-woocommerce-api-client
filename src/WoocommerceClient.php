@@ -241,7 +241,8 @@ class WoocommerceClient
      *
      * @return string
      */
-    public function getHeaderWithCase($header) {
+    public function getHeaderWithCase($header)
+    {
         return $this->usingLowerCaseHeaders ? strtolower($header) : $header;
     }
 }
