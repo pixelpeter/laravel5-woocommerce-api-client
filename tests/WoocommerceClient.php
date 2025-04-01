@@ -279,7 +279,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
      */
     public function headers_are_converted_to_lower_case_when_requested()
     {
-        $header = "X-Test-Header";
+        $header = 'X-Test-Header';
 
         $this->woocommerce->useCaseSensitiveHeaders();
 
