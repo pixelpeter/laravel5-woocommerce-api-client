@@ -1,4 +1,6 @@
-<?php namespace Pixelpeter\Woocommerce\Facades;
+<?php
+
+namespace Pixelpeter\Woocommerce\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
