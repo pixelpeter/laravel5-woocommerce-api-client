@@ -1,21 +1,21 @@
 # Laravel 5 WooCommerce API Client
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/pixelpeter/laravel5-woocommerce-api-client.svg?style=flat-square)](https://packagist.org/packages/pixelpeter/laravel5-woocommerce-api-client)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis Build](https://img.shields.io/travis/pixelpeter/laravel5-woocommerce-api-client/master.svg?style=flat-square)](https://travis-ci.org/pixelpeter/laravel5-woocommerce-api-client)
-[![Scrutinizer Quality](https://img.shields.io/scrutinizer/g/pixelpeter/laravel5-woocommerce-api-client.svg?style=flat-square)](https://scrutinizer-ci.com/g/pixelpeter/laravel5-woocommerce-api-client)
-[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/pixelpeter/laravel5-woocommerce-api-client.svg?style=flat-square)](https://scrutinizer-ci.com/g/pixelpeter/laravel5-woocommerce-api-client)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/edfbddc6-ccbc-425c-9db8-726a5bc371e7.svg?style=flat-square)](https://insight.sensiolabs.com/projects/edfbddc6-ccbc-425c-9db8-726a5bc371e7)
 [![Total Downloads](https://img.shields.io/packagist/dt/pixelpeter/laravel5-woocommerce-api-client.svg?style=flat-square)](https://packagist.org/packages/pixelpeter/laravel5-woocommerce-api-client)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Coverage Status](https://coveralls.io/repos/github/pixelpeter/laravel5-woocommerce-api-client/badge.svg?branch=master)](https://coveralls.io/github/pixelpeter/laravel5-woocommerce-api-client?branch=master)
+[![Tests](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/run-tests.yml/badge.svg?branch=master)](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/run-tests.yml)
+[![Fix PHP code style issues](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/fix-php-code-style-issues.yml)
+[![PHPStan](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/phpstan.yml/badge.svg)](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/phpstan.yml)
+[![dependabot-auto-merge](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/dependabot-auto-merge.yml/badge.svg)](https://github.com/pixelpeter/laravel5-woocommerce-api-client/actions/workflows/dependabot-auto-merge.yml)
 
 A simple Laravel 5 wrapper for the [official WooCommerce REST API PHP Library](https://github.com/woothemes/wc-api-php) from Automattic.
 
 ## Version overview
 
 | Laravel | wc-api-php used | Wordpress |  Woocommerce  |          WC API version           | use branch |
-| ------  | --------------- | --------- | ------------- | --------------------------------- | ---------- |  
-| 5.7+    | 2.x             | 4.4+      | 3.5+          | v1, v2, v3                        | w.i.p.     |
+| ------  | --------------- | --------- | ------------- | --------------------------------- |------------|  
+| 5.7+    | 2.x             | 4.4+      | 3.5+          | v1, v2, v3                        | master     |
 | 5.5+    | 1.3.x           | 4.4+      | 3.0 - 3.4.x   | v1, v2, v3                        | ^3.0       |
 | 5.4+    | 1.3.x           | 4.4+      | 2.6 - 2.6.14  | v1, v2                            | ^2.0       |
 | 5.3     | 1.3.x           | 4.1+      | 2.1 - 2.5.5   | legacy v1, legacy v2, legacy v3   | ^1.0       |

@@ -1,4 +1,6 @@
-<?php namespace Pixelpeter\Woocommerce;
+<?php
+
+namespace Pixelpeter\Woocommerce;
 
 use Automattic\WooCommerce\Client;
 use Illuminate\Support\ServiceProvider;
@@ -20,7 +22,7 @@ class WoocommerceServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/woocommerce.php' => config_path('woocommerce.php'),
+            __DIR__.'/../config/woocommerce.php' => config_path('woocommerce.php'),
         ]);
     }
 
@@ -35,13 +37,13 @@ class WoocommerceServiceProvider extends ServiceProvider
 
         // merge default config
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/woocommerce.php',
+            __DIR__.'/../config/woocommerce.php',
             'woocommerce'
         );
 
         $config = $app['config']->get('woocommerce');
 
-        $app->singleton('woocommerce.client', function() use ($config) {
+        $app->singleton('woocommerce.client', function () use ($config) {
             return new Client(
                 $config['store_url'],
                 $config['consumer_key'],
@@ -55,7 +57,7 @@ class WoocommerceServiceProvider extends ServiceProvider
                 ]);
         });
 
-        $app->singleton('Pixelpeter\Woocommerce\WoocommerceClient', function($app) {
+        $app->singleton('Pixelpeter\Woocommerce\WoocommerceClient', function ($app) {
             return new WoocommerceClient($app['woocommerce.client']);
         });
 
