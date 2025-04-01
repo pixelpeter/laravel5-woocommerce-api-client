@@ -13,7 +13,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
     /**
      * set up
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = Mockery::mock('Automattic\WooCommerce\Client');
         $this->httpClient = Mockery::mock('Automattic\WooCommerce\HttpClient\HttpClient');
@@ -277,7 +277,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
     /**
      * tear down
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

@@ -3,7 +3,7 @@
 use Automattic\WooCommerce\Client;
 
 /**
- * @property mixed config
+ * @property mixed $config
  */
 class WoocommerceClient
 {
