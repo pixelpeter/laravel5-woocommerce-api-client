@@ -1,9 +1,11 @@
-<?php namespace Pixelpeter\Woocommerce;
+<?php
+
+namespace Pixelpeter\Woocommerce;
 
 use Automattic\WooCommerce\Client;
 
 /**
- * @property mixed config
+ * @property mixed $config
  */
 class WoocommerceClient
 {
@@ -19,6 +21,7 @@ class WoocommerceClient
 
     /**
      */
+
     public function __construct(Client $client)
     {
         $this->client = $client;
@@ -27,9 +30,8 @@ class WoocommerceClient
     /**
      * POST method.
      *
-     * @param string $endpoint API endpoint.
-     * @param array $data Request data.
-     *
+     * @param  string  $endpoint  API endpoint.
+     * @param  array  $data  Request data.
      * @return array
      */
     public function post($endpoint, $data)
@@ -40,9 +42,8 @@ class WoocommerceClient
     /**
      * PUT method.
      *
-     * @param string $endpoint API endpoint.
-     * @param array $data Request data.
-     *
+     * @param  string  $endpoint  API endpoint.
+     * @param  array  $data  Request data.
      * @return array
      */
     public function put($endpoint, $data)
@@ -53,9 +54,8 @@ class WoocommerceClient
     /**
      * GET method.
      *
-     * @param string $endpoint API endpoint.
-     * @param array $parameters Request parameters.
-     *
+     * @param  string  $endpoint  API endpoint.
+     * @param  array  $parameters  Request parameters.
      * @return array
      */
     public function get($endpoint, $parameters = [])
@@ -66,9 +66,8 @@ class WoocommerceClient
     /**
      * DELETE method.
      *
-     * @param string $endpoint API endpoint.
-     * @param array $parameters Request parameters.
-     *
+     * @param  string  $endpoint  API endpoint.
+     * @param  array  $parameters  Request parameters.
      * @return array
      */
     public function delete($endpoint, $parameters = [])
@@ -123,7 +122,7 @@ class WoocommerceClient
      */
     public function currentPage()
     {
-        return !empty($this->getRequest()->getParameters()['page']) ? $this->getRequest()->getParameters()['page'] : 1;
+        return ! empty($this->getRequest()->getParameters()['page']) ? $this->getRequest()->getParameters()['page'] : 1;
     }
 
     /**
@@ -185,7 +184,7 @@ class WoocommerceClient
      */
     public function hasNextPage()
     {
-        return (bool)$this->nextPage();
+        return (bool) $this->nextPage();
     }
 
     /**
@@ -195,7 +194,7 @@ class WoocommerceClient
      */
     public function hasPreviousPage()
     {
-        return (bool)$this->previousPage();
+        return (bool) $this->previousPage();
     }
 
     /**
@@ -205,7 +204,7 @@ class WoocommerceClient
      */
     public function hasNotNextPage()
     {
-        return (bool)!$this->nextPage();
+        return (bool) ! $this->nextPage();
     }
 
     /**
@@ -215,7 +214,7 @@ class WoocommerceClient
      */
     public function hasNotPreviousPage()
     {
-        return (bool)!$this->previousPage();
+        return (bool) ! $this->previousPage();
     }
 
     /**

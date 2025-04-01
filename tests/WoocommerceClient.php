@@ -1,8 +1,8 @@
-<?php namespace Pixelpeter\Woocommerce\Test;
+<?php
+
+namespace Pixelpeter\Woocommerce\Test;
 
 use Mockery;
-use PHPUnit_Framework_TestCase;
-use Pixelpeter\Woocommerce\Facades\Woocommerce;
 use Pixelpeter\Woocommerce\WoocommerceClient;
 
 /**
@@ -13,7 +13,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
     /**
      * set up
      */
-    public function setUp()
+    protected function setUp(): void
     {
         $this->client = Mockery::mock('Automattic\WooCommerce\Client');
         $this->httpClient = Mockery::mock('Automattic\WooCommerce\HttpClient\HttpClient');
@@ -22,7 +22,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->woocommerce = new WoocommerceClient($this->client);
     }
 
-    public function testSomethingIsTrue()
+    public function test_something_is_true()
     {
         $this->assertTrue(true);
     }
@@ -35,7 +35,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->client
             ->shouldReceive('post')
             ->once()
-            ->with('someurl',['bar' => 'baz'])
+            ->with('someurl', ['bar' => 'baz'])
             ->andReturn('foo');
 
         $this->assertEquals($this->woocommerce->post('someurl', ['bar' => 'baz']), 'foo');
@@ -49,7 +49,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->client
             ->shouldReceive('put')
             ->once()
-            ->with('someurl',['bar' => 'baz'])
+            ->with('someurl', ['bar' => 'baz'])
             ->andReturn('foo');
 
         $this->assertEquals($this->woocommerce->put('someurl', ['bar' => 'baz']), 'foo');
@@ -63,7 +63,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->client
             ->shouldReceive('get')
             ->once()
-            ->with('someurl',[])
+            ->with('someurl', [])
             ->andReturn('foo');
 
         $this->assertEquals($this->woocommerce->get('someurl'), 'foo');
@@ -77,7 +77,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->client
             ->shouldReceive('delete')
             ->once()
-            ->with('someurl',[])
+            ->with('someurl', [])
             ->andReturn('foo');
 
         $this->assertEquals($this->woocommerce->delete('someurl'), 'foo');
@@ -128,7 +128,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
             ->shouldReceive('getResponse->getHeaders')
             ->once()
             ->andReturn([
-                'X-WP-TotalPages' => 12
+                'X-WP-TotalPages' => 12,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -157,7 +157,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->httpClient
             ->shouldReceive('getRequest->getParameters')
             ->andReturn([
-                'page' => 6
+                'page' => 6,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -173,7 +173,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
             ->shouldReceive('getResponse->getHeaders')
             ->once()
             ->andReturn([
-                'X-WP-Total' => 1234
+                'X-WP-Total' => 1234,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -189,7 +189,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
             ->shouldReceive('getResponse->getHeaders')
             ->once()
             ->andReturn([
-                'X-WP-TotalPages' => 13
+                'X-WP-TotalPages' => 13,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -204,7 +204,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->httpClient
             ->shouldReceive('getRequest->getParameters')
             ->andReturn([
-                'page' => 1
+                'page' => 1,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -221,7 +221,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->httpClient
             ->shouldReceive('getRequest->getParameters')
             ->andReturn([
-                'page' => 5
+                'page' => 5,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -238,12 +238,12 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->httpClient
             ->shouldReceive('getResponse->getHeaders')
             ->andReturn([
-                'X-WP-TotalPages' => 13
+                'X-WP-TotalPages' => 13,
             ]);
         $this->httpClient
             ->shouldReceive('getRequest->getParameters')
             ->andReturn([
-                'page' => 13
+                'page' => 13,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -260,12 +260,12 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
         $this->httpClient
             ->shouldReceive('getResponse->getHeaders')
             ->andReturn([
-                'X-WP-TotalPages' => 13
+                'X-WP-TotalPages' => 13,
             ]);
         $this->httpClient
             ->shouldReceive('getRequest->getParameters')
             ->andReturn([
-                'page' => 5
+                'page' => 5,
             ]);
         $this->client->http = $this->httpClient;
 
@@ -293,7 +293,7 @@ class WoocommerceClientTest extends \PHPUnit\Framework\TestCase
     /**
      * tear down
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         Mockery::close();
     }
