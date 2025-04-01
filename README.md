@@ -194,6 +194,16 @@ Woocommerce::hasNotPreviousPage(); // false
 Woocommerce::hasNotNextPage(); // false
 ```
 
+In some cases the web server returns headers only in lower case. This may cause errors when
+using the pagination functions. If that is your case, call the following method before calling 
+any pagination methods.
+
+```php
+use Woocommerce;
+
+Woocommerce::useLowerCaseHeaders();
+```
+
 ### HTTP Request & Response (Headers)
 
 ```php
@@ -211,7 +221,6 @@ Woocommerce::getResponse();
 // get the total number of results
 Woocommerce::getResponse()->getHeaders()['X-WP-Total']
 ```
-
 
 ### More Examples
 Refer to [WooCommerce REST API Documentation](https://woocommerce.github.io/woocommerce-rest-api-docs) for more examples and documention.

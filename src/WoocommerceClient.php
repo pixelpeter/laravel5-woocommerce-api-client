@@ -14,6 +14,11 @@ class WoocommerceClient
      */
     protected $client;
 
+    /**
+     * @var bool
+     */
+    protected $usingLowerCaseHeaders = false;
+
     public function __construct(Client $client)
     {
         $this->client = $client;
@@ -124,7 +129,7 @@ class WoocommerceClient
      */
     public function totalResults()
     {
-        return (int) $this->getResponse()->getHeaders()['X-WP-Total'];
+        return (int) $this->getResponse()->getHeaders()[$this->getHeaderWithCase('X-WP-Total')];
     }
 
     /**
@@ -134,7 +139,7 @@ class WoocommerceClient
      */
     public function totalPages()
     {
-        return (int) $this->getResponse()->getHeaders()['X-WP-TotalPages'];
+        return (int) $this->getResponse()->getHeaders()[$this->getHeaderWithCase('X-WP-TotalPages')];
     }
 
     /**
@@ -207,5 +212,32 @@ class WoocommerceClient
     public function hasNotPreviousPage()
     {
         return (bool) ! $this->previousPage();
+    }
+
+    /**
+     * Set if headers should be indexed using lower case
+     */
+    public function useLowerCaseHeaders()
+    {
+        $this->usingLowerCaseHeaders = true;
+    }
+
+    /**
+     * Set if headers should be case sensitive
+     */
+    public function useCaseSensitiveHeaders()
+    {
+        $this->usingLowerCaseHeaders = false;
+    }
+
+    /**
+     * Convert header to correct case
+     *
+     *
+     * @return string
+     */
+    public function getHeaderWithCase($header)
+    {
+        return $this->usingLowerCaseHeaders ? strtolower($header) : $header;
     }
 }
